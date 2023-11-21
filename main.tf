@@ -55,5 +55,5 @@ module "nodepools" {
   taint-key = var.taint_key
   taint-value = var.taint_value 
   taint-eff = var.taint_eff
-  
+  cluster = module.kubernetes.cluster
 }

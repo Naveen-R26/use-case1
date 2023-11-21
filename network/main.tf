@@ -117,7 +117,7 @@ resource "google_compute_router_nat" "nat" {
 }
 
 resource "google_compute_address" "nat" {
-  name         = google_compute_router_nat.nat.name
+  name         = var.nat-name
   address_type = var.nat-add-type 
   network_tier = var.nat-net-tier 
 

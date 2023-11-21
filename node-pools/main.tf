@@ -5,7 +5,7 @@ resource "google_service_account" "kubernetes" {
 
 resource "google_container_node_pool" "general" {
   name       = var.nodepool-n1 
-  cluster    = google_container_cluster.primary.id
+  cluster    = var.cluster
   node_count = 1
 
   management {
@@ -30,7 +30,7 @@ resource "google_container_node_pool" "general" {
 
 resource "google_container_node_pool" "spot" {
   name    = var.nodepool-n2 
-  cluster = google_container_cluster.primary.id
+  cluster = var.cluster
 
   management {
     auto_repair  = true

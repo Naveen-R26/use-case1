@@ -38,3 +38,6 @@ variable "taint-eff" {
   type = string
   description = "taint effect for the nodepool type of effect"
 }
+variable "cluster" {
+  
+}
