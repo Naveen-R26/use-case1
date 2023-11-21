@@ -1,7 +1,7 @@
-my_storage_buck = "my-bucket-tfstate"
+/*my_storage_buck = "my-bucket-tfstate"
 storage_loc = "US"
 storage_cls = "STANDARD"
-bucket_pref = "terraform/state"
+bucket_pref = "terraform/state"*/
 vpc_name = "main"
 routing_mode = "REGIONAL"
 Subnet_name = "private"
