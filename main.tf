@@ -1,5 +1,9 @@
 module "network" {
   source = "./network"
+  my-storage-buck = var.my_storage_buck 
+  storage-loc = var.storage_loc
+  storage-cls = var.storage_cls 
+  bucket-pref = var.bucket_pref 
   vpc-name = var.vpc_name
   routing-mode = var.routing_mode
   Subnet-name = var.Subnet_name
@@ -34,7 +38,8 @@ module "kubernetes" {
   relese-ch = var.relese_ch
   work-pool = var.work_pool
   master-ip = var.master_ip
- 
+ network1 = module.network.network-name
+ subnetwork1 = module.network.subnetwork-name
 }
 
 module "nodepools" {
@@ -50,5 +55,5 @@ module "nodepools" {
   taint-key = var.taint_key
   taint-value = var.taint_value 
   taint-eff = var.taint_eff
-
+  
 }

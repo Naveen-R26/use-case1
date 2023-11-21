@@ -1,3 +1,18 @@
+variable "my-storage-buck" {
+  type = string
+  description = "bucket name"
+}
+variable "storage-loc" {
+  
+}
+variable "storage-cls" {
+  
+}
+variable "bucket-pref" {
+  
+}
+
+
 variable "vpc-name" {
   type = string
   description = "name of the vpc"
@@ -41,7 +56,6 @@ variable "Firewall-name" {
 variable "proto-type" {
   type = string
   description = "protocol type "
-  
 }
 variable "protocol-type" {
   type = string

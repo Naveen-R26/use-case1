@@ -3,8 +3,8 @@ resource "google_container_cluster" "primary" {
   location                 = var.cluster-loc 
   remove_default_node_pool = true
   initial_node_count       = 1
-  network                  = google_compute_network.main.self_link
-  subnetwork               = google_compute_subnetwork.private.self_link
+  network                  = var.network1
+  subnetwork               = var.subnetwork1
   logging_service          = "logging.googleapis.com/kubernetes"
   monitoring_service       = "monitoring.googleapis.com/kubernetes"
   networking_mode          = var.cluster-netmode  #Alias ip

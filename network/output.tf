@@ -1,3 +1,7 @@
+/*my-storage-buck = "my-bucket-tfstate"
+storage-loc = "US"
+storage-cls = "STANDARD"
+bucket-pref = "terraform/state"
 vpc-name = "main"
 routing-mode = "REGIONAL"
 Subnet-name = "private"
@@ -20,4 +24,11 @@ source-ip-nat = "LIST_OF_SUBNETWORKS"
 nat-alloc-ip = "MANUAL_ONLY"
 source-ip-type = "ALL_IP_RANGES"
 nat-add-type = "EXTERNAL"
-nat-net-tier = "PREMIUM"
+nat-net-tier = "PREMIUM"*/
+
+output "network-name"{
+    value = google_compute_network.main
+}
+output "subnetwork-name" {
+  value = google_compute_subnetwork.private.name
+}

@@ -1,4 +1,4 @@
-#Creating VPC for cluster
+#Enabling required API,s
 
 resource "google_project_service" "compute" {
   service = "compute.googleapis.com"
@@ -7,7 +7,38 @@ resource "google_project_service" "compute" {
 resource "google_project_service" "container" {
   service = "container.googleapis.com"
 }
+resource "google_project_service" "storage" {
+  service = "storage.googleapis.com"
+}
 
+/*#Creating An Bucket to store tfstate file
+resource "random_id" "bucket_prefix" {
+  byte_length = 8
+}
+
+resource "google_storage_bucket" "my-bucket" {
+  name          = var.my-storage-buck 
+  force_destroy = false
+  location      = var.storage-loc 
+  storage_class = var.storage-cls 
+  versioning {
+    enabled = true
+  }
+  encryption {
+    default_kms_key_name = google_kms_crypto_key.terraform_state_bucket.id
+  }
+  depends_on = [
+    google_project_iam_member.default
+  ]
+}
+terraform {
+ backend "gcs" {
+   bucket  = google_storage_bucket.my-storage-buck.name
+   prefix  = var.bucket-pref 
+ }
+}*/
+
+#Creating VPC for cluster
 resource "google_compute_network" "main" {
   name                            = var.vpc-name
   routing_mode                    = var.routing-mode
@@ -27,7 +58,7 @@ resource "google_compute_subnetwork" "private" {
   name                     = var.Subnet-name
   ip_cidr_range            = var.subnet-range
   region                   = var.region-name
-  network                  = google_compute_network.main.id
+  network                  = google_compute_network.main.name
   private_ip_google_access = true
 
   secondary_ip_range {
@@ -86,7 +117,7 @@ resource "google_compute_router_nat" "nat" {
 }
 
 resource "google_compute_address" "nat" {
-  name         = google_compute_router_nat.nat.self_link
+  name         = google_compute_router_nat.nat.name
   address_type = var.nat-add-type 
   network_tier = var.nat-net-tier 
 

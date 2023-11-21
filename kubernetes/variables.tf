@@ -28,3 +28,9 @@ variable "master-ip" {
   type = string
   description = "master cidr range for private cluster configuration"
 }
+variable "network1" {
+  
+}
+variable "subnetwork1" {
+  
+}
