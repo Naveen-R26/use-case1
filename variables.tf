@@ -1,4 +1,4 @@
-variable "my_storage_buck" {
+/*variable "my_storage_buck" {
   
 }
 variable "storage_loc" {
@@ -9,7 +9,7 @@ variable "storage_cls" {
 }
 variable "bucket_pref" {
   
-}
+}*/
 
 variable "vpc_name" {
   type = string

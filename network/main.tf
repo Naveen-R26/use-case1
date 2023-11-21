@@ -95,7 +95,7 @@ resource "google_compute_firewall" "allow-ssh" {
 resource "google_compute_router" "router" {
   name    = var.router-name
   region  = var.router-region 
-  network = google_compute_network.main.id
+  network = google_compute_network.main.name
 }
 
 #Creating NAT for cluster
@@ -109,7 +109,7 @@ resource "google_compute_router_nat" "nat" {
   nat_ip_allocate_option             = var.nat-alloc-ip
 
   subnetwork {
-    name                    = google_compute_subnetwork.private.id
+    name                    = google_compute_subnetwork.private.name
     source_ip_ranges_to_nat = [var.source-ip-type]
   }
 
