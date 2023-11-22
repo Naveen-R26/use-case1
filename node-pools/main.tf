@@ -6,6 +6,8 @@ resource "google_service_account" "kubernetes" {
 resource "google_container_node_pool" "general" {
   name       = var.nodepool-n1 
   cluster    = var.cluster
+  location = "asia-south1-a"
+
   node_count = 1
 
   management {
@@ -31,6 +33,8 @@ resource "google_container_node_pool" "general" {
 resource "google_container_node_pool" "spot" {
   name    = var.nodepool-n2 
   cluster = var.cluster
+  location = "asia-south1-a"
+
 
   management {
     auto_repair  = true
