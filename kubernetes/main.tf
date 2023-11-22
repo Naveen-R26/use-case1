@@ -41,5 +41,6 @@ resource "google_container_cluster" "primary" {
     enable_private_endpoint = false
     master_ipv4_cidr_block  = var.master-ip 
   }
+  deletion_protection = false # if it set to true we can not delete the cluster
 
 }
