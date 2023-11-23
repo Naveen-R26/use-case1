@@ -1,9 +1,5 @@
 module "network" {
   source = "./network"
-  /*my-storage-buck = var.my_storage_buck 
-  storage-loc = var.storage_loc
-  storage-cls = var.storage_cls 
-  bucket-pref = var.bucket_pref*/
   vpc-name = var.vpc_name
   routing-mode = var.routing_mode
   Subnet-name = var.Subnet_name

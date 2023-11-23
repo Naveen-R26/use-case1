@@ -3,6 +3,12 @@ provider "google" {
   region  = "asia-south1"
 }
 terraform {
+  backend "gcs" {
+    bucket = "terra-tfstate-store"      #ur bucket name pre-created bucket
+    prefix = "terraform/state"
+  }
+}
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"

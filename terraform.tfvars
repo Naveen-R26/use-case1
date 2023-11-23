@@ -1,7 +1,4 @@
-/*my_storage_buck = "my-bucket-tfstate"
-storage_loc = "US"
-storage_cls = "STANDARD"
-bucket_pref = "terraform/state"*/
+
 vpc_name = "main"
 routing_mode = "REGIONAL"
 Subnet_name = "private"
@@ -11,7 +8,7 @@ pod_name = "k8s-pod-range"
 pod_range = "10.48.0.0/14"
 service_name = "k8s-service-range"
 service_range = "10.52.0.0/20"
-Firewall_name = "allow-ssh"
+Firewall_name = "my-firewall-k8s"
 proto_type = "icmp"
 protocol_type = "tcp"
 port_num = ["22","80","8080","1000-2000"]

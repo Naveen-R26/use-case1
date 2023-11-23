@@ -7,36 +7,6 @@ resource "google_project_service" "compute" {
 resource "google_project_service" "container" {
   service = "container.googleapis.com"
 }
-resource "google_project_service" "storage" {
-  service = "storage.googleapis.com"
-}
-
-/*#Creating An Bucket to store tfstate file
-resource "random_id" "bucket_prefix" {
-  byte_length = 8
-}
-
-resource "google_storage_bucket" "my-bucket" {
-  name          = var.my-storage-buck 
-  force_destroy = false
-  location      = var.storage-loc 
-  storage_class = var.storage-cls 
-  versioning {
-    enabled = true
-  }
-  encryption {
-    default_kms_key_name = google_kms_crypto_key.terraform_state_bucket.id
-  }
-  depends_on = [
-    google_project_iam_member.default
-  ]
-}
-terraform {
- backend "gcs" {
-   bucket  = google_storage_bucket.my-storage-buck.name
-   prefix  = var.bucket-pref 
- }
-}*/
 
 #Creating VPC for cluster
 resource "google_compute_network" "main" {
