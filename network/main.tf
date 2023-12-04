@@ -62,7 +62,7 @@ resource "google_compute_firewall" "allow-ssh" {
 
 #Creating Router for cluster
 
-resource "google_compute_router" "router" {
+/*  resource "google_compute_router" "router" {
   name    = var.router-name
   region  = var.router-region 
   network = google_compute_network.main.name
@@ -94,6 +94,6 @@ resource "google_compute_address" "nat" {
   depends_on = [google_project_service.compute]
 }
 
+#gcloud services disable compute.googleapis.com --force    --use this for to force to delete the cluster
 
-
-
+*/

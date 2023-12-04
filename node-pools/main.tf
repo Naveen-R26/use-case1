@@ -8,7 +8,7 @@ resource "google_container_node_pool" "general" {
   cluster    = var.cluster
   location = "asia-south1-a"
 
-  node_count = 1
+  node_count = 3
 
   management {
     auto_repair  = true
@@ -35,7 +35,7 @@ resource "google_container_node_pool" "general" {
   }
 }
 
-resource "google_container_node_pool" "spot" {
+/* resource "google_container_node_pool" "spot" {
   name    = var.nodepool-n2 
   cluster = var.cluster
   location = "asia-south1-a"
@@ -70,5 +70,6 @@ resource "google_container_node_pool" "spot" {
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
-}
+  
+}   */
 
