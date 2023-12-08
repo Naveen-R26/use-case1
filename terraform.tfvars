@@ -35,7 +35,7 @@ master_ip = "172.16.0.0/28"
 
 k8s_acc_id = "kubernetes"
 nodepool_n1 = "general"
-machine_type = "e2-small"
+machine_type = "e2-standard-4"
 role_lbl = "general"
 nodepool_n2 = "spot"
 m_type = "e2-small"
