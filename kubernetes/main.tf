@@ -10,10 +10,10 @@ resource "google_container_cluster" "primary" {
   networking_mode          = var.cluster-netmode  #Alias ip
 
   # Optional, if you want multi-zonal cluster
-  node_locations = [
+ /* node_locations = [
      var.node-loc 
   ]
-
+  */
   addons_config {
     http_load_balancing {
       disabled = true
