@@ -1,5 +1,5 @@
 provider "google" {
-  project = "enhanced-kit-397503" #ur project id
+  project = "naveen-406504" #ur project id
   region  = "asia-south1"
 }
 terraform {
