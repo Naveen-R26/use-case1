@@ -6,7 +6,7 @@ resource "google_service_account" "kubernetes" {
 resource "google_container_node_pool" "general" {
   name       = var.nodepool-n1 
   cluster    = var.cluster
-  location = "asia-south1-b"
+  location = "asia-south1-a"
 
   node_count = 3
 
@@ -24,7 +24,7 @@ resource "google_container_node_pool" "general" {
     preemptible  = false
     machine_type = var.machine-type 
     disk_size_gb = 50
-    
+
 
 
     labels = {
