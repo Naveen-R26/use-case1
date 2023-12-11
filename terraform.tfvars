@@ -25,9 +25,9 @@ nat_net_tier = "PREMIUM"
 
 
 cluster_name = "primary"
-cluster_loc = "asia-south1-b"
+cluster_loc = "asia-south1-a"
 cluster_netmode = "VPC_NATIVE"
-//node_loc = "asia-south1-a"
+node_loc = "asia-south1-b"
 relese_ch = "REGULAR"
 work_pool = "naveen-406504.svc.id.goog"
 master_ip = "172.16.0.0/28"
