@@ -1,6 +1,6 @@
-resource "google_service_account" "kubernetes" {
+/* resource "google_service_account" "kubernetes" {
   account_id = var.k8s-acc-id 
-}
+} */
 
 
 resource "google_container_node_pool" "general" {
@@ -31,10 +31,10 @@ resource "google_container_node_pool" "general" {
       role = var.role-lbl 
     }
 
-    service_account = google_service_account.kubernetes.email
+   /* service_account = google_service_account.kubernetes.email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
-    ]
+    ]  */
   }
 }
 
