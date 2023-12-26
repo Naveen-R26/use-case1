@@ -27,7 +27,12 @@ pipeline {
         stage('Terraform plan') {
             steps {
                 script {
-                    sh 'terraform plan'
+                    try {
+                        sh 'terraform plan'
+                    } catch (Exception e) {
+                        echo "Terraform plan failed: ${e.message}"
+                        currentBuild.result = 'FAILURE'
+                    }
                 }
             }
         }
@@ -39,12 +44,5 @@ pipeline {
                 }
             }
         }
-        /*stage('Terraform Destroy') {
-            steps {
-                script {
-                    sh 'terraform destroy -auto-approve'
-                }
-            }
-        } */  
     }
 }
